@@ -36,3 +36,7 @@ if err == nil {
 }
 defer resp.Body.Close()
 ```
+
+## Thanks
+
+This is based on [node-modules/charset](https://github.com/node-modules/charset)
