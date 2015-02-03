@@ -8,7 +8,7 @@ import (
 	"github.com/mozillazg/go-charset"
 )
 
-func Example_header() {
+func ExampleParse_header() {
 	p := charset.NewParser()
 	h := http.Header{"Content-Type": {"text/html;charset=utf8"}}
 	fmt.Println(p.Parse(h, nil))
@@ -18,14 +18,14 @@ func Example_header() {
 	//utf8
 }
 
-func Example_string() {
+func ExampleParse_string() {
 	s := "text/html;charset=utf8"
 	fmt.Println(charset.Parse(s, nil))
 	// Output:
 	//utf8
 }
 
-func Example_body() {
+func ExampleParse_body() {
 	b := []byte(`<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>')`)
 	fmt.Println(charset.Parse(nil, b))
 	resp, err := http.Get("http://www.mozilla.gr.jp/standards/contact.html")

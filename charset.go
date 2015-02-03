@@ -18,9 +18,12 @@ func NewParser() *Parser {
 	return &Parser{PeekSize}
 }
 
-func (p *Parser) Parse(obj interface{}, data []byte) (ct string) {
+func (p *Parser) Parse(obj interface{}, data []byte) string {
 	var matchs []string
 	end := 0
+	contentType := ""
+	ct := ""
+
 	if data != nil {
 		if len(data) > p.PeekSize {
 			end = p.PeekSize
@@ -30,7 +33,6 @@ func (p *Parser) Parse(obj interface{}, data []byte) (ct string) {
 	}
 
 	// Parse("text/html;charset=gbk", nil)
-	contentType := ""
 	switch obj.(type) {
 	case string:
 		contentType, _ = obj.(string)
