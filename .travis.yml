@@ -14,4 +14,4 @@ before_install:
   - go get github.com/bmizerany/assert
 
 script:
-  - $HOME/gopath/bin/goveralls -repotoken Zcje66LRh6o72wfJOygNcHd9GbyteSkTd
+  - $HOME/gopath/bin/goveralls -service=travis-ci
