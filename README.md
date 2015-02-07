@@ -16,7 +16,7 @@ go get -u github.com/mozillazg/go-charset
 ## Usage
 
 ```go
-s := `<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>'
+s := `<meta http-equiv="Content-Type" content="text/html; charset=gbk"/>`
 fmt.Println(charset.Parse(s, nil))
 //gbk
 ```
